@@ -76,5 +76,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn=(Button)findViewById(R.id.btn_callactivity);
+        btn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(MainActivity.this,Myactivity.class);
+                //인텐트는 액티비티
+
+                startActivity(intent);
+            }
+        });
     }
 }

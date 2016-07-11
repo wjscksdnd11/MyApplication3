@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'//얘를 가지고 구동을 하자
 
-android {//이 안드로이드 정보를 apply안에 줘야한다. 이렇게 android{ ...} 이런식으로 정의하는 것은 domain specific languge라고 하는 DSL이라 한다. 결국 환경변수 정의 .
-    compileSdkVersion 23    // 일반적으로는 가장 높은 버전을 쓴다. import가 안될때, 다운받지 말고, 이걸 수정하자. compile할때, 어떤 버전을 기반으로 할 것인가.
+android {
+//이 안드로이드 정보를 apply안에 줘야한다. 이렇게 android{ ...} 이런식으로 정의하는 것은 domain specific languge라고 하는 DSL이라 한다. 결국 환경변수 정의 .
+    compileSdkVersion 23
+    // 일반적으로는 가장 높은 버전을 쓴다. import가 안될때, 다운받지 말고, 이걸 수정하자. compile할때, 어떤 버전을 기반으로 할 것인가.
     buildToolsVersion "24.0.0"  //버전을 바꿀때,
 
     defaultConfig {
         applicationId "com.example.tacademy.myapplication"//패키지명, andorid application Id
         minSdkVersion 15
-        targetSdkVersion 23 //안드로이드 단말한테 api버전이 상위 버전이어도 설정한 값처럼 돌아가도록 설정하는거. 6.0은 런타임 퍼미션 설정법이 다르다. 이 버전을 낮추면 된다.
+        targetSdkVersion 23
+        //안드로이드 단말한테 api버전이 상위 버전이어도 설정한 값처럼 돌아가도록 설정하는거. 6.0은 런타임 퍼미션 설정법이 다르다. 이 버전을 낮추면 된다.
         versionCode 1
         versionName "1.0"
     }
@@ -23,4 +26,5 @@ dependencies { //이 앱이 사용하는 것은 이러이러한 것이다.
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
 }
